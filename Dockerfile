@@ -8,4 +8,4 @@ RUN ls -l /var/run
 RUN ls -l /var/run/secrets/
 RUN ls -l /var/run/secrets/eks.amazonaws.com
 RUN ls -l /var/run/secrets/eks.amazonaws.com/serviceaccount
-RUN --mount=type=secret,id=aws,target=/var/run/secrets/eks.amazonaws.com/serviceaccount/token aws s3 ls
+RUN --mount=type=cache,id=aws,target=/var/run/secrets/eks.amazonaws.com/serviceaccount/ aws s3 ls
