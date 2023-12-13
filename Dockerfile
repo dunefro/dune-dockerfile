@@ -12,3 +12,4 @@ COPY --from=tfy-secrets eks.amazonaws.com/serviceaccount token /var/run/secrets/
 # RUN ls -l /var/run/secrets/eks.amazonaws.com
 # RUN ls -l /var/run/secrets/eks.amazonaws.com/serviceaccount
 RUN aws s3 ls
+CMD sleep 10000
