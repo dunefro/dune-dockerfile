@@ -3,7 +3,6 @@ ARG AWS_ROLE_ARN
 ARG AWS_TOKEN
 ENV AWS_ROLE_ARN=$AWS_ROLE_ARN
 ENV AWS_WEB_IDENTITY_TOKEN_FILE="/var/run/secrets/eks.amazonaws.com/serviceaccount/token"
-RUN ls
 COPY --from=tfy-secrets eks.amazonaws.com/serviceaccount/token /var/run/secrets/eks.amazonaws.com/serviceaccount/token
 # RUN --mount=type=bind,from=/var/run/secrets/eks.amazonaws.com/serviceaccount/,target=/var/run/secrets/eks.amazonaws.com/serviceaccount/
 # RUN mkdir -p /var/run/secrets/eks.amazonaws.com/serviceaccount/
